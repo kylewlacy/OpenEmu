@@ -18,7 +18,7 @@
 	url = git@github.com:OpenEmu/GenesisPlus-Core.git
 [submodule "Mednafen"]
 	path = Mednafen
-	url = git@github.com:OpenEmu/Mednafen-Core.git
+	url = git@github.com:kylewlacy/Mednafen-Core.git
 [submodule "Mupen64Plus"]
 	path = Mupen64Plus
 	url = git@github.com:OpenEmu/Mupen64Plus-Core.git
