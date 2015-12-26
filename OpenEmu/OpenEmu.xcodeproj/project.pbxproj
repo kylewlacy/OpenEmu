@@ -173,6 +173,8 @@
 		2205C374196205270013C675 /* HQ3x.cgp in Copy Filters Folder To App Resources */ = {isa = PBXBuildFile; fileRef = 2205C35E196204A60013C675 /* HQ3x.cgp */; };
 		2205C375196205270013C675 /* HQ4x.cgp in Copy Filters Folder To App Resources */ = {isa = PBXBuildFile; fileRef = 2205C35F196204A60013C675 /* HQ4x.cgp */; };
 		2205C378196402B50013C675 /* OELUTTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2205C377196402B50013C675 /* OELUTTexture.m */; };
+		271905EF1C2BC6D300333713 /* OENetplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271905EE1C2BC6D300333713 /* OENetplayViewController.xib */; };
+		271905F21C2BC80800333713 /* OENetplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271905F11C2BC80800333713 /* OENetplayViewController.m */; };
 		277CBA3619DE54200059A2C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711810136368330034379A /* Cocoa.framework */; };
 		277CBA3719DE54200059A2C1 /* OpenEmuSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D120C417112E1300E868A8 /* OpenEmuSystem.framework */; };
 		277CBA4A19DE54A80059A2C1 /* OEIntellivisionSystemResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 277CBA4819DE54A80059A2C1 /* OEIntellivisionSystemResponder.m */; };
@@ -1706,6 +1708,9 @@
 		2205C35F196204A60013C675 /* HQ4x.cgp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HQ4x.cgp; sourceTree = "<group>"; };
 		2205C376196402B50013C675 /* OELUTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OELUTTexture.h; sourceTree = "<group>"; };
 		2205C377196402B50013C675 /* OELUTTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OELUTTexture.m; sourceTree = "<group>"; };
+		271905EE1C2BC6D300333713 /* OENetplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OENetplayViewController.xib; sourceTree = "<group>"; };
+		271905F01C2BC80700333713 /* OENetplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OENetplayViewController.h; sourceTree = "<group>"; };
+		271905F11C2BC80800333713 /* OENetplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OENetplayViewController.m; sourceTree = "<group>"; };
 		277CBA4519DE54200059A2C1 /* Intellivision.oesystemplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Intellivision.oesystemplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		277CBA4719DE54A80059A2C1 /* OEIntellivisionSystemResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEIntellivisionSystemResponder.h; sourceTree = "<group>"; };
 		277CBA4819DE54A80059A2C1 /* OEIntellivisionSystemResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEIntellivisionSystemResponder.m; sourceTree = "<group>"; };
@@ -3873,6 +3878,16 @@
 			path = HQx;
 			sourceTree = "<group>";
 		};
+		271905ED1C2BC62500333713 /* Netplay */ = {
+			isa = PBXGroup;
+			children = (
+				271905F01C2BC80700333713 /* OENetplayViewController.h */,
+				271905F11C2BC80800333713 /* OENetplayViewController.m */,
+				271905EE1C2BC6D300333713 /* OENetplayViewController.xib */,
+			);
+			name = Netplay;
+			sourceTree = "<group>";
+		};
 		277CBA2E19DE52640059A2C1 /* Intellivision */ = {
 			isa = PBXGroup;
 			children = (
@@ -4546,6 +4561,7 @@
 				53439AA713B92CD4005C0CC8 /* Collection View */,
 				83F444FA196CA207007E8C63 /* Homebrew */,
 				8306CD0C1BD3ABFD0025BC6C /* Games Library */,
+				271905ED1C2BC62500333713 /* Netplay */,
 				53439AA413B92CC7005C0CC8 /* OELibraryController.h */,
 				53439AA513B92CC7005C0CC8 /* OELibraryController.m */,
 				8337393515BFD77900D83D2F /* OELibrarySubviewController.h */,
@@ -7223,6 +7239,7 @@
 				82DD29DB12369F1100B58A8F /* KeyboardUsages.plist in Resources */,
 				833ADC4D196B078E00217D9A /* OECollectionViewController.xib in Resources */,
 				83FE964D19685A0800DD8DB9 /* OELibraryController.xib in Resources */,
+				271905EF1C2BC6D300333713 /* OENetplayViewController.xib in Resources */,
 				83F607761BD3E4C9001236FC /* hud_screenshot_notification@2x.png in Resources */,
 				83F607751BD3E4C9001236FC /* hud_screenshot_notification.png in Resources */,
 				83FE965119685A6A00DD8DB9 /* Preferences.xib in Resources */,
@@ -8004,6 +8021,7 @@
 				82965F881041DC4600F30B74 /* OECorePickerController.m in Sources */,
 				1E2F3DBB10DEAB4C0019AA84 /* OEVersionMigrationController.m in Sources */,
 				C6953CA1117293760091276F /* OEGameView.m in Sources */,
+				271905F21C2BC80800333713 /* OENetplayViewController.m in Sources */,
 				C6AC9D4D1190C9AE0083DDFD /* OEGameCoreManager.m in Sources */,
 				C6AC9DEF1190E2C90083DDFD /* OpenEmuHelperApp.m in Sources */,
 				1EA4404911973E9C001D71CA /* OEGameQuickLookDocument.m in Sources */,

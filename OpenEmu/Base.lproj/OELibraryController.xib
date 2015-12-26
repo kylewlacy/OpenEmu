@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,6 @@
         <customView id="616">
             <rect key="frame" x="0.0" y="0.0" width="830" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <animations/>
         </customView>
         <toolbar implicitIdentifier="647CF7A7-A628-4038-A1D8-26746C7CC43D" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" prefersToBeShown="NO" displayMode="iconOnly" sizeMode="regular" id="386-1H-9HX" customClass="OELibraryToolbar">
             <allowedToolbarItems>
@@ -37,13 +36,11 @@
                                 <imageView id="frh-Ke-F5l" userLabel="Minus Hint Image View">
                                     <rect key="frame" x="12" y="16" width="7" height="7"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topRight" id="Q9h-4Z-F9s"/>
                                 </imageView>
                                 <slider verticalHuggingPriority="750" id="hfc-c7-igG" userLabel="Size Slider" customClass="OESlider">
                                     <rect key="frame" x="20" y="12" width="64" height="15"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <sliderCell key="cell" controlSize="small" continuous="YES" state="on" alignment="left" minValue="0.5" maxValue="2.5" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="mhj-6u-lCz" customClass="OESliderCell"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="themeKey" value="grid_slider"/>
@@ -57,13 +54,10 @@
                                 <imageView id="WVb-HG-sWJ" userLabel="Max Hint Image View">
                                     <rect key="frame" x="84" y="15" width="10" height="10"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" id="oze-RB-u52"/>
                                 </imageView>
                             </subviews>
-                            <animations/>
                         </view>
-                        <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
@@ -82,7 +76,6 @@
                                 <button id="iN6-LV-eCq" userLabel="Grid View Mode Button" customClass="OEButton">
                                     <rect key="frame" x="1" y="5" width="27" height="23"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" inset="2" id="oeB-Z8-6HV" customClass="OEButtonCell">
                                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -97,7 +90,6 @@
                                 <button id="l8b-vJ-uKr" userLabel="List View Mode Button" customClass="OEButton">
                                     <rect key="frame" x="28" y="5" width="27" height="23"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="Uf3-af-6jC" customClass="OEButtonCell">
                                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -110,9 +102,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <animations/>
                         </view>
-                        <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
@@ -131,14 +121,14 @@
                                 <segmentedControl verticalHuggingPriority="750" id="enK-iW-Klt">
                                     <rect key="frame" x="2" y="9" width="353" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="y2e-ND-lKU" customClass="OEToolbarSegmentedCell">
                                         <font key="font" metaFont="system"/>
                                         <segments>
-                                            <segment label="Library" width="86" selected="YES"/>
-                                            <segment label="Save States" width="86" tag="1"/>
-                                            <segment label="Screenshots" width="86"/>
-                                            <segment label="Homebrew" width="86"/>
+                                            <segment label="Library" width="68" selected="YES"/>
+                                            <segment label="Save States" width="68" tag="1"/>
+                                            <segment label="Screenshots" width="67"/>
+                                            <segment label="Homebrew" width="67"/>
+                                            <segment label="Netplay"/>
                                         </segments>
                                     </segmentedCell>
                                     <connections>
@@ -146,9 +136,7 @@
                                     </connections>
                                 </segmentedControl>
                             </subviews>
-                            <animations/>
                         </view>
-                        <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
@@ -167,7 +155,6 @@
                                 <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" id="NZT-Zn-8Vl" customClass="OESearchField">
                                     <rect key="frame" x="0.0" y="6" width="166" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" placeholderString="Search" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="gXt-MS-4X4" customClass="OESearchFieldCell">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -181,9 +168,7 @@
                                     </connections>
                                 </searchField>
                             </subviews>
-                            <animations/>
                         </view>
-                        <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>

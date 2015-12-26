@@ -45,6 +45,7 @@
 
 #import "OEGameCollectionViewController.h"
 #import "OEMediaViewController.h"
+#import "OENetplayViewController.h"
 #import "OEDBSavedGamesMedia.h"
 #import "OEDBScreenshotsMedia.h"
 #import "OEHomebrewViewController.h"
@@ -63,6 +64,7 @@ typedef NS_ENUM(NSUInteger, OELibraryCategory) {
     OELibraryCategorySaveStates,
     OELibraryCategoryScreenshots,
     OELibraryCategoryHomebrew,
+    OELibraryCategoryNetplay,
 
     OELibraryCategoryCount
 };
@@ -82,6 +84,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 @property (strong, readonly) OEMediaViewController *saveStatesViewController;
 @property (strong, readonly) OEMediaViewController *screenshotsViewController;
 @property (strong, readonly) OEHomebrewViewController *homebrewViewController;
+@property (strong, readonly) OENetplayViewController *netplayViewController;
 
 @end
 
@@ -125,10 +128,14 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     _homebrewViewController = [[OEHomebrewViewController alloc] init];
     _homebrewViewController.libraryController = self;
     
+    _netplayViewController = [[OENetplayViewController alloc] init];
+    _netplayViewController.libraryController = self;
+    
     [self addChildViewController:_libraryGamesViewController];
     [self addChildViewController:_saveStatesViewController];
     [self addChildViewController:_screenshotsViewController];
     [self addChildViewController:_homebrewViewController];
+    [self addChildViewController:_netplayViewController];
 }
 
 - (void)viewDidAppear
@@ -254,6 +261,8 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
             return self.screenshotsViewController;
         case OELibraryCategoryHomebrew:
             return self.homebrewViewController;
+        case OELibraryCategoryNetplay:
+            return self.netplayViewController;
         default:
             @throw [NSException exceptionWithName:NSInvalidArgumentException
                                            reason:@"Unrecognized category."
