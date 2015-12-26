@@ -37,4 +37,23 @@
     return @"OENetplayViewController";
 }
 
+- (IBAction)hostGame:(id)sender
+{
+    short port = self.serverPort.intValue;
+    if(port == 0) { port = 20293; }
+    BOOL allowSpectators = self.serverAllowsSpectators.state == NSOnState;
+    
+    NSLog(@"Hosting game (port %d, %@)", port, allowSpectators ? @"spectators" : @"no spectators");
+}
+
+- (IBAction)joinGame:(id)sender
+{
+    NSString *address = self.clientJoinAddress.stringValue;
+    short port = self.clientJoinPort.intValue;
+    if(port == 0) { port = 20293; }
+    BOOL spectate = self.clientSpectate.state == NSOnState;
+    
+    NSLog(@"Joining game (server %@, port %d, %@)", address, port, spectate ? @"spectating" : @"playing");
+}
+
 @end

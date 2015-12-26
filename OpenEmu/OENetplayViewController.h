@@ -30,4 +30,13 @@
 
 @interface OENetplayViewController : NSViewController <OELibrarySubviewController>
 @property (nonatomic, weak) OELibraryController *libraryController;
+@property (weak) IBOutlet NSTextField *clientJoinAddress;
+@property (weak) IBOutlet NSTextField *clientJoinPort;
+@property (weak) IBOutlet NSButton *clientSpectate;
+@property (weak) IBOutlet NSTextField *serverPort;
+@property (weak) IBOutlet NSButton *serverAllowsSpectators;
+
+- (IBAction)hostGame:(id)sender;
+- (IBAction)joinGame:(id)sender;
+
 @end
