@@ -364,15 +364,18 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
     NSAssert([gamesToStart count] > 0, @"Attempt to start a game while the selection is empty");
 
-    if([[self delegate] respondsToSelector:@selector(libraryController:didSelectGame:)])
+    for(OEDBGame *game in gamesToStart)
     {
-        for(OEDBGame *game in gamesToStart) [[self delegate] libraryController:self didSelectGame:game];
+        [self startGame:game];
     }
 }
 
 - (void)startGame:(OEDBGame*)game
 {
-    [[self delegate] libraryController:self didSelectGame:game];
+    if([[self delegate] respondsToSelector:@selector(libraryController:didSelectGame:)])
+    {
+        [[self delegate] libraryController:self didSelectGame:game];
+    }
 }
 
 - (IBAction)startSaveState:(id)sender
