@@ -63,6 +63,10 @@ extern NSString * const OELibraryLastCategoryKey;
 - (void)startGame:(OEDBGame*)game;
 - (IBAction)startSelectedGame:(id)sender;
 - (IBAction)startSaveState:(id)sender;
+- (IBAction)hostSelectedGameOnline:(id)sender;
+- (IBAction)joinSelectedGameOnline:(id)sender;
+- (void)hostGameOnline:(OEDBGame*)game;
+- (void)joinGameOnline:(OEDBGame*)game;
 
 #pragma mark - Custom Views
 - (IBAction)switchCategory:(id)sender;

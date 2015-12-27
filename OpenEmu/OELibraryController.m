@@ -406,6 +406,26 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     [self OE_startGameWithSaveState:saveState];
 }
 
+- (void)hostSelectedGameOnline:(id)sender
+{
+    
+}
+
+- (void)joinSelectedGameOnline:(id)sender
+{
+    
+}
+
+- (void)hostGameOnline:(OEDBGame*)game
+{
+    
+}
+
+- (void)joinGameOnline:(OEDBGame*)game
+{
+    
+}
+
 #pragma mark - Private
 
 - (void)OE_showFullscreen:(BOOL)fsFlag animated:(BOOL)animatedFlag
