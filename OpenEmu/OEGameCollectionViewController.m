@@ -622,6 +622,12 @@ static NSString * const OESelectedGamesKey = @"OESelectedGamesKey";
         [menu addItem:menuItem];
 
         [menu addItem:[NSMenuItem separatorItem]];
+        
+        //Create Netplay Menu
+        [menu addItemWithTitle:NSLocalizedString(@"Host Game Online", @"") action:@selector(hostSelectedGameOnline:) keyEquivalent:@""];
+        [menu addItemWithTitle:NSLocalizedString(@"Join Game Online", @"") action:@selector(joinSelectedGameOnline:) keyEquivalent:@""];
+        
+        [menu addItem:[NSMenuItem separatorItem]];
 
         // Create Rating Item
         menuItem = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Rating", @"") action:NULL keyEquivalent:@""];
