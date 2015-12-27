@@ -384,6 +384,11 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     NSArray *statesToLaunch = [media selectedSaveStates];
 
     if([statesToLaunch count] != 1) return;
+    
+    for(OEDBSaveState *state in statesToLaunch)
+    {
+        [self OE_startGameWithSaveState:state];
+    }
 
     if([[self delegate] respondsToSelector:@selector(libraryController:didSelectSaveState:)])
     {
@@ -397,9 +402,8 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     OEDBSaveState *saveState = [stateItem representedObject];
     
     NSAssert(saveState != nil, @"Attempt to start a save state without valid item");
-
-    if([[self delegate] respondsToSelector:@selector(libraryController:didSelectSaveState:)])
-        [[self delegate] libraryController:self didSelectSaveState:saveState];
+    
+    [self OE_startGameWithSaveState:saveState];
 }
 
 #pragma mark - Private
@@ -424,6 +428,14 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     }
     
     return [selectedGames copy];
+}
+
+- (void)OE_startGameWithSaveState:(OEDBSaveState*)saveState
+{
+    if([[self delegate] respondsToSelector:@selector(libraryController:didSelectSaveState:)])
+    {
+        [[self delegate] libraryController:self didSelectSaveState:saveState];
+    }
 }
 
 @end
