@@ -360,17 +360,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 #pragma mark -
 - (IBAction)startSelectedGame:(id)sender
 {
-    NSMutableArray *gamesToStart = [NSMutableArray new];
-
-    if([sender isKindOfClass:[OEDBGame class]]){
-        [gamesToStart addObject:sender];
-    }
-    else
-    {
-        NSAssert([(id)[self currentSubviewController] respondsToSelector:@selector(selectedGames)], @"Attempt to start a game from a view controller that doesn't announc selectedGames");
-
-        [gamesToStart addObjectsFromArray:[(id <OELibrarySubviewController>)[self currentSubviewController] selectedGames]];
-    }
+    NSArray *gamesToStart = [self OE_selectedGamesForSender:sender];
 
     NSAssert([gamesToStart count] > 0, @"Attempt to start a game while the selection is empty");
 
@@ -414,6 +404,23 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 - (void)OE_showFullscreen:(BOOL)fsFlag animated:(BOOL)animatedFlag
 {
     [NSApp setPresentationOptions:(fsFlag ? NSApplicationPresentationAutoHideDock | NSApplicationPresentationAutoHideMenuBar : NSApplicationPresentationDefault)];
+}
+
+- (NSArray*)OE_selectedGamesForSender:(id)sender
+{
+    NSMutableArray *selectedGames = [NSMutableArray new];
+    
+    if([sender isKindOfClass:[OEDBGame class]]){
+        [selectedGames addObject:sender];
+    }
+    else
+    {
+        NSAssert([(id)[self currentSubviewController] respondsToSelector:@selector(selectedGames)], @"Attempt to start a game from a view controller that doesn't announce selectedGames");
+        
+        [selectedGames addObjectsFromArray:[(id <OELibrarySubviewController>)[self currentSubviewController] selectedGames]];
+    }
+    
+    return [selectedGames copy];
 }
 
 @end
