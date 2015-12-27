@@ -51,6 +51,8 @@
 
 #import "OELibraryGamesViewController.h"
 
+#import "OENetplayHostGameWindowController.h"
+
 #import "OpenEmu-Swift.h"
 
 #pragma mark - Exported variables
@@ -83,6 +85,9 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 @property (strong, readonly) OEMediaViewController *screenshotsViewController;
 @property (strong, readonly) OEHomebrewViewController *homebrewViewController;
 
+// Sheet controllers.
+@property (strong, readonly) OENetplayHostGameWindowController *hostSheetController;
+
 @end
 
 @implementation OELibraryController
@@ -100,6 +105,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     if([self database] == nil) [self setDatabase:[OELibraryDatabase defaultDatabase]];
     
     [self setUpCategoryViewControllers];
+    [self setUpSheets];
     
     _selectedCategory = [[NSUserDefaults standardUserDefaults] integerForKey:OELibraryLastCategoryKey];
     if(_selectedCategory >= OELibraryCategoryCount) {
@@ -129,6 +135,11 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     [self addChildViewController:_saveStatesViewController];
     [self addChildViewController:_screenshotsViewController];
     [self addChildViewController:_homebrewViewController];
+}
+
+- (void)setUpSheets
+{
+    _hostSheetController = [[OENetplayHostGameWindowController alloc] init];
 }
 
 - (void)viewDidAppear
