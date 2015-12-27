@@ -427,7 +427,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
 - (void)joinSelectedGameOnline:(id)sender
 {
-    
+    [self joinGameOnline:nil];
 }
 
 - (void)hostGameOnline:(OEDBGame*)game
@@ -440,7 +440,10 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
 - (void)joinGameOnline:(OEDBGame*)game
 {
-    
+    NSWindow *window = [[self view] window];
+    [[self joinSheetController] beginSheetModalForWindow:window completionHandler:^(NSModalResponse result) {
+        
+    }];
 }
 
 #pragma mark - Private
