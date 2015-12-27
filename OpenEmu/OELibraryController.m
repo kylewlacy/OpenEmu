@@ -52,6 +52,7 @@
 #import "OELibraryGamesViewController.h"
 
 #import "OENetplayHostGameWindowController.h"
+#import "OENetplayJoinGameWindowController.h"
 
 #import "OpenEmu-Swift.h"
 
@@ -87,6 +88,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
 // Sheet controllers.
 @property (strong, readonly) OENetplayHostGameWindowController *hostSheetController;
+@property (strong, readonly) OENetplayJoinGameWindowController *joinSheetController;
 
 @end
 
@@ -140,6 +142,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 - (void)setUpSheets
 {
     _hostSheetController = [[OENetplayHostGameWindowController alloc] init];
+    _joinSheetController = [[OENetplayJoinGameWindowController alloc] init];
 }
 
 - (void)viewDidAppear
