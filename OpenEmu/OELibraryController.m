@@ -419,7 +419,7 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
 - (void)hostSelectedGameOnline:(id)sender
 {
-    
+    [self hostGameOnline:nil];
 }
 
 - (void)joinSelectedGameOnline:(id)sender
@@ -429,7 +429,10 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
 - (void)hostGameOnline:(OEDBGame*)game
 {
-    
+    NSWindow *window = [[self view] window];
+    [[self hostSheetController] beginSheetModalForWindow:window completionHandler:^(NSModalResponse result) {
+        
+    }];
 }
 
 - (void)joinGameOnline:(OEDBGame*)game
