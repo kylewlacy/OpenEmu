@@ -7,6 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="OENetplayHostGameWindowController">
             <connections>
+                <outlet property="allowSpectators" destination="T1d-7c-Uya" id="Uy5-W0-Dq4"/>
+                <outlet property="hasPassword" destination="FDE-Th-wqC" id="hIz-q5-lDa"/>
+                <outlet property="password" destination="jcq-io-OPq" id="nPy-0S-XLD"/>
+                <outlet property="port" destination="5d6-VR-eBC" id="1tB-zw-lr9"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="K6m-D4-fwu"/>
             </connections>
         </customObject>

@@ -27,6 +27,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface OENetplayHostGameWindowController : NSWindowController
+@property (strong) IBOutlet NSTextField *port;
+@property (strong) IBOutlet NSButton *allowSpectators;
+@property (strong) IBOutlet NSTextField *password;
+@property (strong) IBOutlet NSButton *hasPassword;
 
 - (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse result))handler;
 
