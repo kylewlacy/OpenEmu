@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="OENetplayJoinGameWindowController">
             <connections>
+                <outlet property="address" destination="Mrl-3Z-DOD" id="tju-ne-1kX"/>
+                <outlet property="spectate" destination="y97-o5-Aev" id="lUi-so-HKx"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
