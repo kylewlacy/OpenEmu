@@ -26,11 +26,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class OENetplayHostGameOptions;
 @interface OENetplayHostGameWindowController : NSWindowController
 @property (strong) IBOutlet NSTextField *port;
 @property (strong) IBOutlet NSButton *allowSpectators;
 @property (strong) IBOutlet NSTextField *password;
 @property (strong) IBOutlet NSButton *hasPassword;
+@property (readonly,nonatomic) OENetplayHostGameOptions *options;
 
 - (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse result))handler;
 

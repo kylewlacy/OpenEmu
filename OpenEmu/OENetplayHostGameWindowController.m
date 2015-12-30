@@ -25,6 +25,7 @@
  */
 
 #import "OENetplayHostGameWindowController.h"
+#import "OENetplayHostGameOptions.h"
 
 @interface OENetplayHostGameWindowController ()
 
@@ -42,6 +43,24 @@
     }
     
     return self;
+}
+
+- (OENetplayHostGameOptions*)options
+{
+    NSNumber *port = nil;
+    if([[[self port] stringValue] length] > 0)
+    {
+        port = [NSNumber numberWithInteger:[[self port] integerValue]];
+    }
+    
+    NSString *password = nil;
+    if([[self hasPassword] state] == NSOnState)
+    {
+        password = [[self password] stringValue];
+    }
+    
+    BOOL spectators = [[self allowSpectators] state] == NSOnState;
+    return [OENetplayHostGameOptions optionsWithPort:port password:password allowSpectators:spectators];
 }
 
 - (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse))handler
