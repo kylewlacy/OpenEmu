@@ -29,9 +29,10 @@
 @interface OENetplayHostGameOptions : NSObject
 
 @property (readonly,nonatomic) uint16_t port;
+@property (readonly,nonatomic) NSString * _Nullable password; // TODO: salt+hash password (maybe?)
 @property (readonly,nonatomic) BOOL allowSpectators;
 
-+ (OENetplayHostGameOptions* _Nullable)optionsWithPort:(NSNumber* _Nullable)portOrNil allowSpectators:(BOOL)allowSpectators;
++ (OENetplayHostGameOptions* _Nullable)optionsWithPort:(NSNumber* _Nullable)portOrNil password:(NSString* _Nullable)passwordOrNil allowSpectators:(BOOL)allowSpectators;
 
 @end
 
