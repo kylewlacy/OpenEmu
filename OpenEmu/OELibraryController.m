@@ -434,7 +434,10 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 {
     NSWindow *window = [[self view] window];
     [[self hostSheetController] beginSheetModalForWindow:window completionHandler:^(NSModalResponse result) {
-        
+        if(result == NSModalResponseOK)
+        {
+            [self OE_hostGame:game withOptions:[[self hostSheetController] options]];
+        }
     }];
 }
 
@@ -442,7 +445,11 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 {
     NSWindow *window = [[self view] window];
     [[self joinSheetController] beginSheetModalForWindow:window completionHandler:^(NSModalResponse result) {
-        
+        if(result == NSModalResponseOK)
+        {
+            OENetplayJoinGameOptions *options = [[self joinSheetController] options];
+            [self OE_joinGame:game withOptions:options];
+        }
     }];
 }
 
@@ -475,6 +482,24 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
     if([[self delegate] respondsToSelector:@selector(libraryController:didSelectSaveState:)])
     {
         [[self delegate] libraryController:self didSelectSaveState:saveState];
+    }
+}
+
+- (void)OE_hostGame:(OEDBGame*)aGame withOptions:(OENetplayHostGameOptions*)options
+{
+    NSAssert(options != nil, @"Tried hosting a game with invalid hosting options!");
+    if([[self delegate] respondsToSelector:@selector(libraryController:didHostGame:withOptions:)])
+    {
+        [[self delegate] libraryController:self didHostGame:aGame withOptions:options];
+    }
+}
+
+- (void)OE_joinGame:(OEDBGame*)aGame withOptions:(OENetplayJoinGameOptions*)options
+{
+    NSAssert(options != nil, @"Tried joining a game with invalid server options!");
+    if([[self delegate] respondsToSelector:@selector(libraryController:didJoinGame:withOptions:)])
+    {
+        [[self delegate] libraryController:self didJoinGame:aGame withOptions:options];
     }
 }
 
