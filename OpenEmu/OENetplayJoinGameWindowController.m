@@ -25,6 +25,7 @@
  */
 
 #import "OENetplayJoinGameWindowController.h"
+#import "OENetplayJoinGameOptions.h"
 
 @interface OENetplayJoinGameWindowController ()
 
@@ -42,6 +43,14 @@
     }
     
     return self;
+}
+
+- (OENetplayJoinGameOptions*)options
+{
+    NSURL *url = [NSURL URLWithString:[[self address] stringValue]];
+    BOOL spectate = [[self spectate] state] == NSOnState;
+    
+    return [OENetplayJoinGameOptions optionsWithURL:url spectate:spectate];
 }
 
 - (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse))handler
