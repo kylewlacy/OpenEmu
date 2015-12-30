@@ -49,12 +49,14 @@
     
     NSString *host = [url host];
     
-    uint16_t port;
-    if([url port])
+    
+    uint16_t port = 0;
+    if([url port] != nil)
     {
         port = [[url port] unsignedShortValue];
     }
-    else
+    
+    if(port == 0)
     {
         port = OENetplayDefaultPort;
     }
