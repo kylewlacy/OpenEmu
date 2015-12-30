@@ -80,10 +80,13 @@ extern NSString * const OELibraryLastCategoryKey;
 @property (strong) IBOutlet OELibraryToolbar *toolbar;
 @end
 
-@class OEDBGame, OEDBRom, OEDBSaveState;
+@class OEDBGame, OEDBRom, OEDBSaveState, OENetplayHostGameOptions, OENetplayJoinGameOptions;
 @protocol OELibraryControllerDelegate <NSObject>
 @optional
 - (void)libraryController:(OELibraryController *)sender didSelectGame:(OEDBGame *)aGame;
 - (void)libraryController:(OELibraryController *)sender didSelectRom:(OEDBRom *)aGame;
 - (void)libraryController:(OELibraryController *)sender didSelectSaveState:(OEDBSaveState *)aSaveState;
+
+- (void)libraryController:(OELibraryController *)sender didHostGame:(OEDBGame *)aGame withOptions:(OENetplayHostGameOptions *)options;
+- (void)libraryController:(OELibraryController *)sender didJoinGame:(OEDBGame *)aGame withOptions:(OENetplayJoinGameOptions *)options;
 @end
