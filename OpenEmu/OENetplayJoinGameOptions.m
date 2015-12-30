@@ -43,11 +43,25 @@
 
 + (OENetplayJoinGameOptions* _Nullable)optionsWithURL:(NSURL* _Nullable)url spectate:(BOOL)spectate
 {
-    if(!url || ![url host]) {
+    NSString *host = nil;
+    if(url != nil)
+    {
+        // NOTE: [[NSURL URLWithString:@"192.168.1.1"] host] is nil, and [[NSURL URLWithString:@"http://192.168.1.1"] pathComponents] is empty
+        if([url host] != nil)
+        {
+            host = [url host];
+        }
+        else if([url pathComponents] != nil && [[url pathComponents] count] >= 1)
+        {
+            host = [[url pathComponents] objectAtIndex:0];
+        }
+    }
+    
+    if(host == nil)
+    {
         return nil;
     }
     
-    NSString *host = [url host];
     
     
     uint16_t port = 0;
