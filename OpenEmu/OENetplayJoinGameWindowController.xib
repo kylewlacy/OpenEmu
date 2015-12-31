@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="OENetplayJoinGameWindowController">
             <connections>
                 <outlet property="address" destination="Mrl-3Z-DOD" id="tju-ne-1kX"/>
+                <outlet property="okButton" destination="cqZ-fx-W1X" id="vjc-eZ-05f"/>
                 <outlet property="spectate" destination="y97-o5-Aev" id="lUi-so-HKx"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -64,6 +65,9 @@ Gw
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="Usz-Yk-aXB"/>
+                        </connections>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y97-o5-Aev">
                         <rect key="frame" x="18" y="59" width="77" height="18"/>

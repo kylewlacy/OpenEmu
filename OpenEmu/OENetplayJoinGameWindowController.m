@@ -45,6 +45,11 @@
     return self;
 }
 
+- (void)windowDidLoad
+{
+    [self OE_validateForm];
+}
+
 - (OENetplayJoinGameOptions*)options
 {
     NSURL *url = [NSURL URLWithString:[[self address] stringValue]];
@@ -71,6 +76,11 @@
     [self OE_endSheetWithReturnCode:NSModalResponseCancel];
 }
 
+- (void)controlTextDidChange:(NSNotification *)obj
+{
+    [self OE_validateForm];
+}
+
 - (void)OE_endSheetWithReturnCode:(NSModalResponse)code
 {
     if([self activeWindow])
@@ -78,6 +88,19 @@
         [[self activeWindow] endSheet:[self window] returnCode:code];
         [self setActiveWindow:nil];
     }
+}
+
+- (void)OE_validateForm
+{
+    if([self okButton] != nil)
+    {
+        [[self okButton] setEnabled:[self OE_formIsValid]];
+    }
+}
+
+- (BOOL)OE_formIsValid
+{
+    return [self options] != nil;
 }
 
 @end

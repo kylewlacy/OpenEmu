@@ -27,9 +27,10 @@
 #import <Cocoa/Cocoa.h>
 
 @class OENetplayJoinGameOptions;
-@interface OENetplayJoinGameWindowController : NSWindowController
+@interface OENetplayJoinGameWindowController : NSWindowController <NSTextFieldDelegate>
 @property (strong) IBOutlet NSTextField *address;
 @property (strong) IBOutlet NSButton *spectate;
+@property (strong) IBOutlet NSButton *okButton;
 @property (readonly,nonatomic) OENetplayJoinGameOptions *options;
 
 - (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse result))handler;
