@@ -42,6 +42,10 @@
 #import "OEDBGame.h"
 #import "OEDBRom.h"
 
+#import "OENetplayServer.h"
+#import "OENetplayClient.h"
+#import "OENetplayConnection.h"
+
 #import "OEROMImporter.h"
 
 #import "NSDocument+OEAdditions.h"
@@ -67,6 +71,7 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
 }
 
 @property (weak) IBOutlet OEMainWindowTitlebarBackgroundView *titlebarBackgroundView;
+@property (strong,nonatomic) id<OENetplayConnection> connection;
 
 @end
 
@@ -458,6 +463,24 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
 - (void)libraryController:(OELibraryController *)sender didSelectSaveState:(OEDBSaveState *)saveState
 {
     [self OE_openGameDocumentWithGame:nil saveState:saveState];
+}
+
+- (void)libraryController:(OELibraryController *)sender didHostGame:(OEDBGame *)aGame withOptions:(OENetplayHostGameOptions *)options
+{
+    OENetplayServer *server = [OENetplayServer serverWithOptions:options];
+    if(server == nil) {
+        return;
+    }
+    [self setConnection:server];
+}
+
+- (void)libraryController:(OELibraryController *)sender didJoinGame:(OEDBGame *)aGame withOptions:(OENetplayJoinGameOptions *)options
+{
+    OENetplayClient *client = [OENetplayClient clientWithOptions:options];
+    if(client == nil) {
+        return;
+    }
+    [self setConnection:client];
 }
 
 #pragma mark - NSWindow delegate
