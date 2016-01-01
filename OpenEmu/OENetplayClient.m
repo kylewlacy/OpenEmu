@@ -37,7 +37,7 @@
 
 @implementation OENetplayClient
 
-- (BOOL)OE_setupSocketWithOptions:(OENetplayJoinGameOptions*)options
+- (BOOL)OE_setupSocketWithOptions:(OENetplayJoinGameOptions *)options
 {
     NSError *error = nil;
     GCDAsyncSocket *socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
@@ -58,7 +58,7 @@
     return YES;
 }
 
-+ (OENetplayClient*)clientWithOptions:(OENetplayJoinGameOptions*)options
++ (OENetplayClient *)clientWithOptions:(OENetplayJoinGameOptions *)options
 {
     OENetplayClient *client = [[OENetplayClient alloc] init];
     if([client OE_setupSocketWithOptions:options])

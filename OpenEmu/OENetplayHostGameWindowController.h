@@ -34,7 +34,7 @@
 @property (strong) IBOutlet NSButton *hasPassword;
 @property (readonly,nonatomic) OENetplayHostGameOptions *options;
 
-- (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse result))handler;
+- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(NSModalResponse result))handler;
 
 - (IBAction)ok:(id)sender;
 - (IBAction)cancel:(id)sender;

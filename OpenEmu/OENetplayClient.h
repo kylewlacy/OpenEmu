@@ -30,6 +30,6 @@
 @class OENetplayJoinGameOptions;
 @interface OENetplayClient : NSObject <OENetplayConnection>
 
-+ (OENetplayClient*)clientWithOptions:(OENetplayJoinGameOptions*)options;
++ (OENetplayClient *)clientWithOptions:(OENetplayJoinGameOptions *)options;
 
 @end

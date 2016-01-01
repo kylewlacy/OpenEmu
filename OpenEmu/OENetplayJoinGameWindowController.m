@@ -50,7 +50,7 @@
     [self OE_validateForm];
 }
 
-- (OENetplayJoinGameOptions*)options
+- (OENetplayJoinGameOptions *)options
 {
     NSURL *url = [NSURL URLWithString:[[self address] stringValue]];
     BOOL spectate = [[self spectate] state] == NSOnState;
@@ -58,7 +58,7 @@
     return [OENetplayJoinGameOptions optionsWithURL:url spectate:spectate];
 }
 
-- (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse))handler
+- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(NSModalResponse))handler
 {
     [self OE_endSheetWithReturnCode:NSModalResponseCancel];
     

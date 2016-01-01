@@ -29,7 +29,7 @@
 
 @implementation OENetplayJoinGameOptions
 
-- (id)initWithHost:(NSString* _Nonnull)host port:(uint16_t)port spectate:(BOOL)spectate
+- (id)initWithHost:(NSString * _Nonnull)host port:(uint16_t)port spectate:(BOOL)spectate
 {
     if(self = [super init])
     {
@@ -41,7 +41,7 @@
     return self;
 }
 
-+ (OENetplayJoinGameOptions* _Nullable)optionsWithURL:(NSURL* _Nullable)url spectate:(BOOL)spectate
++ (OENetplayJoinGameOptions * _Nullable)optionsWithURL:(NSURL * _Nullable)url spectate:(BOOL)spectate
 {
     NSString *host = nil;
     if(url != nil)

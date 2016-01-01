@@ -45,7 +45,7 @@
     return self;
 }
 
-- (OENetplayHostGameOptions*)options
+- (OENetplayHostGameOptions *)options
 {
     NSNumber *port = nil;
     if([[[self port] stringValue] length] > 0)
@@ -63,7 +63,7 @@
     return [OENetplayHostGameOptions optionsWithPort:port password:password allowSpectators:spectators];
 }
 
-- (void)beginSheetModalForWindow:(NSWindow*)window completionHandler:(void (^)(NSModalResponse))handler
+- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(NSModalResponse))handler
 {
     [self OE_endSheetWithReturnCode:NSModalResponseCancel];
     

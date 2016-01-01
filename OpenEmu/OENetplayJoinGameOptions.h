@@ -32,6 +32,6 @@
 @property (readonly,nonatomic) uint16_t port;
 @property (readonly,nonatomic) BOOL spectate;
 
-+ (OENetplayJoinGameOptions* _Nullable)optionsWithURL:(NSURL* _Nullable)address spectate:(BOOL)spectate;
++ (OENetplayJoinGameOptions * _Nullable)optionsWithURL:(NSURL * _Nullable)address spectate:(BOOL)spectate;
 
 @end

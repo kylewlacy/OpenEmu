@@ -28,7 +28,7 @@
 
 @implementation OENetplayHostGameOptions
 
-- (id)initWithPort:(uint16_t)port password:(NSString* _Nullable)passwordOrNil allowSpectators:(BOOL)allowSpectators
+- (id)initWithPort:(uint16_t)port password:(NSString * _Nullable)passwordOrNil allowSpectators:(BOOL)allowSpectators
 {
     if(self = [super init])
     {
@@ -40,7 +40,7 @@
     return self;
 }
 
-+ (OENetplayHostGameOptions* _Nullable)optionsWithPort:(NSNumber* _Nullable)portOrNil password:(NSString* _Nullable)passwordOrNil allowSpectators:(BOOL)allowSpectators
++ (OENetplayHostGameOptions* _Nullable)optionsWithPort:(NSNumber * _Nullable)portOrNil password:(NSString * _Nullable)passwordOrNil allowSpectators:(BOOL)allowSpectators
 {
     uint16_t port;
     if(portOrNil)

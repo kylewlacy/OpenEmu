@@ -30,6 +30,6 @@
 @class OENetplayHostGameOptions;
 @interface OENetplayServer : NSObject <OENetplayConnection>
 
-+ (OENetplayServer*)serverWithOptions:(OENetplayHostGameOptions*)options;
++ (OENetplayServer *)serverWithOptions:(OENetplayHostGameOptions *)options;
 
 @end
