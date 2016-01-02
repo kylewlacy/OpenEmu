@@ -450,9 +450,9 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
     };
     
     if(state != nil || ((state=[game autosaveForLastPlayedRom]) && [[OEHUDAlert loadAutoSaveGameAlert] runModal] == NSAlertFirstButtonReturn))
-        [[NSDocumentController sharedDocumentController] openGameDocumentWithSaveState:state display:openInSeparateWindow fullScreen:fullScreen completionHandler:openDocument];
+        [[NSDocumentController sharedDocumentController] openGameDocumentWithSaveState:state connection:connection display:openInSeparateWindow fullScreen:fullScreen completionHandler:openDocument];
     else
-        [[NSDocumentController sharedDocumentController] openGameDocumentWithGame:game display:openInSeparateWindow fullScreen:fullScreen completionHandler:openDocument];
+        [[NSDocumentController sharedDocumentController] openGameDocumentWithGame:game connection:connection display:openInSeparateWindow fullScreen:fullScreen completionHandler:openDocument];
 }
 
 - (void)libraryController:(OELibraryController *)sender didSelectGame:(OEDBGame *)game
