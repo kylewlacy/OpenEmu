@@ -468,19 +468,17 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
 - (void)libraryController:(OELibraryController *)sender didHostGame:(OEDBGame *)aGame withOptions:(OENetplayHostGameOptions *)options
 {
     OENetplayServer *server = [OENetplayServer serverWithOptions:options];
-    if(server == nil) {
-        return;
-    }
-    [self setConnection:server];
+    NSAssert(server != nil, @"Failed to host game");
+    
+    [self OE_openGameDocumentWithGame:nil saveState:nil connection:server];
 }
 
 - (void)libraryController:(OELibraryController *)sender didJoinGame:(OEDBGame *)aGame withOptions:(OENetplayJoinGameOptions *)options
 {
     OENetplayClient *client = [OENetplayClient clientWithOptions:options];
-    if(client == nil) {
-        return;
-    }
-    [self setConnection:client];
+    NSAssert(client != nil, @"Failed to connect to game");
+    
+    [self OE_openGameDocumentWithGame:nil saveState:nil connection:client];
 }
 
 #pragma mark - NSWindow delegate
