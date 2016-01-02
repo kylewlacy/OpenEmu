@@ -211,7 +211,7 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
 // ugly hack, remove
 - (void)startGame:(OEDBGame*)game
 {
-    [self OE_openGameDocumentWithGame:game saveState:[game autosaveForLastPlayedRom]];
+    [self OE_openGameDocumentWithGame:game saveState:[game autosaveForLastPlayedRom] connection:nil];
 }
 
 #pragma mark -
@@ -365,7 +365,7 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
 
 #pragma mark - OELibraryControllerDelegate protocol conformance
 
-- (void)OE_openGameDocumentWithGame:(OEDBGame *)game saveState:(OEDBSaveState *)state
+- (void)OE_openGameDocumentWithGame:(OEDBGame *)game saveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection
 {
     // make sure we don't launch a game multiple times :/
     if(_isLaunchingGame) return;
@@ -409,7 +409,7 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
                     {
                         [missingRom setURL:[panel URL]];
                         [missingRom save];
-                        [self OE_openGameDocumentWithGame:game saveState:state];
+                        [self OE_openGameDocumentWithGame:game saveState:state connection:connection];
                     }
                 }
             }
@@ -457,12 +457,12 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
 
 - (void)libraryController:(OELibraryController *)sender didSelectGame:(OEDBGame *)game
 {
-    [self OE_openGameDocumentWithGame:game saveState:nil];
+    [self OE_openGameDocumentWithGame:game saveState:nil connection:nil];
 }
 
 - (void)libraryController:(OELibraryController *)sender didSelectSaveState:(OEDBSaveState *)saveState
 {
-    [self OE_openGameDocumentWithGame:nil saveState:saveState];
+    [self OE_openGameDocumentWithGame:nil saveState:saveState connection:nil];
 }
 
 - (void)libraryController:(OELibraryController *)sender didHostGame:(OEDBGame *)aGame withOptions:(OENetplayHostGameOptions *)options
