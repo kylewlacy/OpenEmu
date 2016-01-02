@@ -30,6 +30,7 @@
 @class OEDBRom;
 @class OEDBSaveState;
 @class OEGameDocument;
+@protocol OENetplayConnection;
 
 @interface NSDocumentController (OEAdditions)
 - (OEGameDocument *)currentGameDocument;
@@ -37,4 +38,8 @@
 - (void)openGameDocumentWithGame:(OEDBGame *)game display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 - (void)openGameDocumentWithRom:(OEDBRom *)rom display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 - (void)openGameDocumentWithSaveState:(OEDBSaveState *)state display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+
+- (void)openGameDocumentWithGame:(OEDBGame *)game connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+- (void)openGameDocumentWithRom:(OEDBRom *)rom connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+- (void)openGameDocumentWithSaveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 @end

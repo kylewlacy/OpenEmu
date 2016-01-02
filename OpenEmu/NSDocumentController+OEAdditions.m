@@ -58,4 +58,19 @@
     [self doesNotImplementSelector:_cmd];
 }
 
+- (void)openGameDocumentWithGame:(OEDBGame *)game connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+{
+    [self doesNotImplementSelector:_cmd];
+}
+
+- (void)openGameDocumentWithRom:(OEDBRom *)rom connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+{
+    [self doesNotImplementSelector:_cmd];
+}
+
+- (void)openGameDocumentWithSaveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+{
+    [self doesNotImplementSelector:_cmd];
+}
+
 @end
