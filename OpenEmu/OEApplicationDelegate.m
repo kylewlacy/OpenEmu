@@ -451,7 +451,22 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
      }];
 }
 
-- (void)openGameDocumentWithGame:(OEDBGame *)game display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+- (void)openGameDocumentWithGame:(OEDBGame *)game display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler
+{
+    [self openGameDocumentWithGame:game connection:nil display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
+}
+
+- (void)openGameDocumentWithRom:(OEDBRom *)rom display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler
+{
+    [self openGameDocumentWithRom:rom connection:nil display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
+}
+
+- (void)openGameDocumentWithSaveState:(OEDBSaveState *)state display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler
+{
+    [self openGameDocumentWithSaveState:state connection:nil display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
+}
+
+- (void)openGameDocumentWithGame:(OEDBGame *)game connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 {
     NSError *error = nil;
     OEGameDocument *document = [[OEGameDocument alloc] initWithGame:game core:nil error:&error];
@@ -465,7 +480,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
     [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
 }
 
-- (void)openGameDocumentWithRom:(OEDBRom *)rom display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+- (void)openGameDocumentWithRom:(OEDBRom *)rom connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 {
     NSError *error = nil;
     OEGameDocument *document = [[OEGameDocument alloc] initWithRom:rom core:nil error:&error];
@@ -479,7 +494,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
     [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
 }
 
-- (void)openGameDocumentWithSaveState:(OEDBSaveState *)state display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+- (void)openGameDocumentWithSaveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 {
     NSError *error = nil;
     OEGameDocument *document = [[OEGameDocument alloc] initWithSaveState:state error:&error];
