@@ -25,7 +25,7 @@
  */
 
 #import "OENetplayJoinGameWindowController.h"
-#import "OENetplayJoinGameOptions.h"
+#import <OpenEmuSystem/OpenEmuSystem.h>
 
 @interface OENetplayJoinGameWindowController ()
 

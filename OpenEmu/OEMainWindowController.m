@@ -42,9 +42,7 @@
 #import "OEDBGame.h"
 #import "OEDBRom.h"
 
-#import "OENetplayServer.h"
-#import "OENetplayClient.h"
-#import "OENetplayConnection.h"
+#import <OpenEmuSystem/OpenEmuSystem.h>
 
 #import "OEROMImporter.h"
 
@@ -470,7 +468,7 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
     OENetplayServer *server = [OENetplayServer serverWithOptions:options];
     NSAssert(server != nil, @"Failed to host game");
     
-    [self OE_openGameDocumentWithGame:nil saveState:nil connection:server];
+    [self OE_openGameDocumentWithGame:aGame saveState:nil connection:server];
 }
 
 - (void)libraryController:(OELibraryController *)sender didJoinGame:(OEDBGame *)aGame withOptions:(OENetplayJoinGameOptions *)options
@@ -478,7 +476,7 @@ NSString *const OEDefaultWindowTitle       = @"OpenEmu";
     OENetplayClient *client = [OENetplayClient clientWithOptions:options];
     NSAssert(client != nil, @"Failed to connect to game");
     
-    [self OE_openGameDocumentWithGame:nil saveState:nil connection:client];
+    [self OE_openGameDocumentWithGame:aGame saveState:nil connection:client];
 }
 
 #pragma mark - NSWindow delegate

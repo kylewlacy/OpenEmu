@@ -25,7 +25,7 @@
  */
 
 #import "OENetplayHostGameWindowController.h"
-#import "OENetplayHostGameOptions.h"
+#import <OpenEmuSystem/OpenEmuSystem.h>
 
 @interface OENetplayHostGameWindowController ()
 

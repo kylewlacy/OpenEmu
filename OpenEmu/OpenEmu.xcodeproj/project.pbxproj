@@ -173,9 +173,6 @@
 		2205C374196205270013C675 /* HQ3x.cgp in Copy Filters Folder To App Resources */ = {isa = PBXBuildFile; fileRef = 2205C35E196204A60013C675 /* HQ3x.cgp */; };
 		2205C375196205270013C675 /* HQ4x.cgp in Copy Filters Folder To App Resources */ = {isa = PBXBuildFile; fileRef = 2205C35F196204A60013C675 /* HQ4x.cgp */; };
 		2205C378196402B50013C675 /* OELUTTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2205C377196402B50013C675 /* OELUTTexture.m */; };
-		2759125B1C34F33100D40AB1 /* OENetplayServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759125A1C34F33100D40AB1 /* OENetplayServer.m */; };
-		2759125E1C34F35400D40AB1 /* OENetplayClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2759125D1C34F35400D40AB1 /* OENetplayClient.m */; };
-		275912651C36255500D40AB1 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 275912641C36255500D40AB1 /* GCDAsyncSocket.m */; };
 		277CBA3619DE54200059A2C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6711810136368330034379A /* Cocoa.framework */; };
 		277CBA3719DE54200059A2C1 /* OpenEmuSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D120C417112E1300E868A8 /* OpenEmuSystem.framework */; };
 		277CBA4A19DE54A80059A2C1 /* OEIntellivisionSystemResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 277CBA4819DE54A80059A2C1 /* OEIntellivisionSystemResponder.m */; };
@@ -188,8 +185,6 @@
 		277CBA5A19DE55210059A2C1 /* Keyboard-Mappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277CBA5819DE55210059A2C1 /* Keyboard-Mappings.plist */; };
 		277CBA5D19DE553C0059A2C1 /* Controller-Mappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277CBA5B19DE553C0059A2C1 /* Controller-Mappings.plist */; };
 		277CBA5E19DE553C0059A2C1 /* Controller-Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277CBA5C19DE553C0059A2C1 /* Controller-Preferences.plist */; };
-		27D235251C31242E000B3C01 /* OENetplayHostGameOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D235241C31242E000B3C01 /* OENetplayHostGameOptions.m */; };
-		27D235281C312446000B3C01 /* OENetplayJoinGameOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D235271C312446000B3C01 /* OENetplayJoinGameOptions.m */; };
 		27E59D621C2FCAC100B93D43 /* OENetplayHostGameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E59D601C2FCAC100B93D43 /* OENetplayHostGameWindowController.m */; };
 		27E59D631C2FCAC100B93D43 /* OENetplayHostGameWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E59D611C2FCAC100B93D43 /* OENetplayHostGameWindowController.xib */; };
 		27E59D671C308C7600B93D43 /* OENetplayJoinGameWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E59D651C308C7600B93D43 /* OENetplayJoinGameWindowController.m */; };
@@ -1710,13 +1705,6 @@
 		2205C35F196204A60013C675 /* HQ4x.cgp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HQ4x.cgp; sourceTree = "<group>"; };
 		2205C376196402B50013C675 /* OELUTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OELUTTexture.h; sourceTree = "<group>"; };
 		2205C377196402B50013C675 /* OELUTTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OELUTTexture.m; sourceTree = "<group>"; };
-		275912591C34F33100D40AB1 /* OENetplayServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OENetplayServer.h; sourceTree = "<group>"; };
-		2759125A1C34F33100D40AB1 /* OENetplayServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OENetplayServer.m; sourceTree = "<group>"; };
-		2759125C1C34F35400D40AB1 /* OENetplayClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OENetplayClient.h; sourceTree = "<group>"; };
-		2759125D1C34F35400D40AB1 /* OENetplayClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OENetplayClient.m; sourceTree = "<group>"; };
-		275912631C36255500D40AB1 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		275912641C36255500D40AB1 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
-		275912661C36354900D40AB1 /* OENetplayConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OENetplayConnection.h; sourceTree = "<group>"; };
 		277CBA4519DE54200059A2C1 /* Intellivision.oesystemplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Intellivision.oesystemplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		277CBA4719DE54A80059A2C1 /* OEIntellivisionSystemResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEIntellivisionSystemResponder.h; sourceTree = "<group>"; };
 		277CBA4819DE54A80059A2C1 /* OEIntellivisionSystemResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEIntellivisionSystemResponder.m; sourceTree = "<group>"; };
@@ -1731,10 +1719,6 @@
 		277CBA5819DE55210059A2C1 /* Keyboard-Mappings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Keyboard-Mappings.plist"; sourceTree = "<group>"; };
 		277CBA5B19DE553C0059A2C1 /* Controller-Mappings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Mappings.plist"; sourceTree = "<group>"; };
 		277CBA5C19DE553C0059A2C1 /* Controller-Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Controller-Preferences.plist"; sourceTree = "<group>"; };
-		27D235231C31242E000B3C01 /* OENetplayHostGameOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OENetplayHostGameOptions.h; sourceTree = "<group>"; };
-		27D235241C31242E000B3C01 /* OENetplayHostGameOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OENetplayHostGameOptions.m; sourceTree = "<group>"; };
-		27D235261C312446000B3C01 /* OENetplayJoinGameOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OENetplayJoinGameOptions.h; sourceTree = "<group>"; };
-		27D235271C312446000B3C01 /* OENetplayJoinGameOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OENetplayJoinGameOptions.m; sourceTree = "<group>"; };
 		27E59D5F1C2FCAC100B93D43 /* OENetplayHostGameWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OENetplayHostGameWindowController.h; sourceTree = "<group>"; };
 		27E59D601C2FCAC100B93D43 /* OENetplayHostGameWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OENetplayHostGameWindowController.m; sourceTree = "<group>"; };
 		27E59D611C2FCAC100B93D43 /* OENetplayHostGameWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OENetplayHostGameWindowController.xib; sourceTree = "<group>"; };
@@ -3896,28 +3880,6 @@
 			path = HQx;
 			sourceTree = "<group>";
 		};
-		275912551C34F1B700D40AB1 /* Netplay */ = {
-			isa = PBXGroup;
-			children = (
-				2759125F1C36214C00D40AB1 /* CocoaAsyncSocket */,
-				275912661C36354900D40AB1 /* OENetplayConnection.h */,
-				275912591C34F33100D40AB1 /* OENetplayServer.h */,
-				2759125A1C34F33100D40AB1 /* OENetplayServer.m */,
-				2759125C1C34F35400D40AB1 /* OENetplayClient.h */,
-				2759125D1C34F35400D40AB1 /* OENetplayClient.m */,
-			);
-			name = Netplay;
-			sourceTree = "<group>";
-		};
-		2759125F1C36214C00D40AB1 /* CocoaAsyncSocket */ = {
-			isa = PBXGroup;
-			children = (
-				275912631C36255500D40AB1 /* GCDAsyncSocket.h */,
-				275912641C36255500D40AB1 /* GCDAsyncSocket.m */,
-			);
-			name = CocoaAsyncSocket;
-			sourceTree = "<group>";
-		};
 		277CBA2E19DE52640059A2C1 /* Intellivision */ = {
 			isa = PBXGroup;
 			children = (
@@ -3957,10 +3919,6 @@
 				27E59D641C308C7600B93D43 /* OENetplayJoinGameWindowController.h */,
 				27E59D651C308C7600B93D43 /* OENetplayJoinGameWindowController.m */,
 				27E59D661C308C7600B93D43 /* OENetplayJoinGameWindowController.xib */,
-				27D235231C31242E000B3C01 /* OENetplayHostGameOptions.h */,
-				27D235241C31242E000B3C01 /* OENetplayHostGameOptions.m */,
-				27D235261C312446000B3C01 /* OENetplayJoinGameOptions.h */,
-				27D235271C312446000B3C01 /* OENetplayJoinGameOptions.m */,
 			);
 			name = Netplay;
 			sourceTree = "<group>";
@@ -4419,7 +4377,6 @@
 				8249C8E60E899CFF0027EFDF /* Utility Windows */,
 				83B6E444143E1BBD00BCDB7A /* Utilities */,
 				14F6A92A168184550071386D /* Game Document */,
-				275912551C34F1B700D40AB1 /* Netplay */,
 				C6AC9D4B1190C9AE0083DDFD /* OEGameCoreManager.h */,
 				C6AC9D4C1190C9AE0083DDFD /* OEGameCoreManager.m */,
 				C6BF6BC717CAF09F004A8841 /* OEGameCoreManager_Internal.h */,
@@ -8058,10 +8015,8 @@
 				8306CD2B1BD3AD480025BC6C /* OESidebarCell.m in Sources */,
 				8306CD2C1BD3AD480025BC6C /* OESidebarController.m in Sources */,
 				8306CD2D1BD3AD480025BC6C /* OESidebarFieldEditor.m in Sources */,
-				27D235281C312446000B3C01 /* OENetplayJoinGameOptions.m in Sources */,
 				8306CD2E1BD3AD480025BC6C /* OESidebarGroupItem.m in Sources */,
 				8306CD2F1BD3AD480025BC6C /* OESidebarOutlineView.m in Sources */,
-				2759125B1C34F33100D40AB1 /* OENetplayServer.m in Sources */,
 				1BFC2725116C1F6700B95689 /* OETaskWrapper.m in Sources */,
 				8D15AC310486D014006FF6A4 /* OEGameDocument.m in Sources */,
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
@@ -8071,7 +8026,6 @@
 				C62F54710FE6ADC500DF15BA /* OEPlugin.m in Sources */,
 				C62F549B0FE6CC1500DF15BA /* OECorePlugin.m in Sources */,
 				C69DCD010FE994A5009AE5A6 /* OEPluginDocument.m in Sources */,
-				2759125E1C34F35400D40AB1 /* OENetplayClient.m in Sources */,
 				8370D3DC1A8D25D900313F87 /* OETableCellView.m in Sources */,
 				82965F881041DC4600F30B74 /* OECorePickerController.m in Sources */,
 				1E2F3DBB10DEAB4C0019AA84 /* OEVersionMigrationController.m in Sources */,
@@ -8128,7 +8082,6 @@
 				53439B7A13B933B8005C0CC8 /* OEGameControlsBar.m in Sources */,
 				53439B8213B933E9005C0CC8 /* OEHUDWindow.m in Sources */,
 				836AEA711975BFE100B86935 /* OEGridCell.m in Sources */,
-				275912651C36255500D40AB1 /* GCDAsyncSocket.m in Sources */,
 				C6289C32135B215B00EEE97C /* OESystemPlugin.m in Sources */,
 				5A9606E81C0BCD350089B494 /* NSImage+DrawingAdditions.swift in Sources */,
 				83199722142741790068C865 /* OEROMImporter.m in Sources */,
@@ -8153,7 +8106,6 @@
 				839310BC147802380020058E /* OECoreDownload.m in Sources */,
 				83CA87B41961CDD400D86D55 /* 1.2 to 1.3.xcmappingmodel in Sources */,
 				83F7DBAF18C0E2470029199C /* OEFileManager.m in Sources */,
-				27D235251C31242E000B3C01 /* OENetplayHostGameOptions.m in Sources */,
 				EF2FDBEB14CFFE06002A64F2 /* OEControlsKeyButton.m in Sources */,
 				EF2FDBEC14CFFE11002A64F2 /* OEControlsKeyLabelCell.m in Sources */,
 				EF2FDBED14CFFE1B002A64F2 /* OEControlsKeySeparatorView.m in Sources */,
