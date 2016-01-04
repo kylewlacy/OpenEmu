@@ -50,6 +50,7 @@
 #import "OEXPCGameCoreManager.h"
 #import "OEDownload.h"
 #import "OEROMImporter.h"
+#import "OENetplayConnection.h"
 
 // using the main window controller here is not very nice, but meh
 #import "OEMainWindowController.h"
@@ -111,7 +112,7 @@ typedef enum : NSUInteger
     return self;
 }
 
-- (id)initWithRom:(OEDBRom *)rom core:(OECorePlugin *)core error:(NSError **)outError
+- (id)initWithRom:(OEDBRom *)rom core:(OECorePlugin *)core connection:(id<OENetplayConnection>)connection error:(NSError **)outError
 {
     if(!(self = [self init]))
         return nil;
@@ -122,12 +123,12 @@ typedef enum : NSUInteger
     return self;
 }
 
-- (id)initWithGame:(OEDBGame *)game core:(OECorePlugin *)core error:(NSError **)outError
+- (id)initWithGame:(OEDBGame *)game core:(OECorePlugin *)core connection:(id<OENetplayConnection>)connection error:(NSError **)outError
 {
     return [self initWithRom:[game defaultROM] core:core error:outError];
 }
 
-- (id)initWithSaveState:(OEDBSaveState *)state error:(NSError **)outError
+- (id)initWithSaveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection error:(NSError **)outError
 {
     if(!(self = [self init]))
         return nil;
@@ -136,6 +137,21 @@ typedef enum : NSUInteger
         return nil;
 
     return self;
+}
+
+- (id)initWithRom:(OEDBRom *)rom core:(OECorePlugin *)core error:(NSError *__autoreleasing *)outError
+{
+    return [self initWithRom:rom core:core connection:nil error:outError];
+}
+
+- (id)initWithGame:(OEDBGame *)game core:(OECorePlugin *)core error:(NSError *__autoreleasing *)outError
+{
+    return [self initWithGame:game core:core connection:nil error:outError];
+}
+
+- (id)initWithSaveState:(OEDBSaveState *)state error:(NSError *__autoreleasing *)outError
+{
+    return [self initWithSaveState:state connection:nil error:outError];
 }
 
 - (NSString *)description

@@ -46,8 +46,13 @@ enum _OEGameDocumentErrorCodes
 @class OEDBSaveState;
 @class OEGameViewController;
 @class OESystemPlugin;
+@protocol OENetplayConnection;
 
 @interface OEGameDocument : NSDocument
+
+- (id)initWithRom:(OEDBRom *)rom core:(OECorePlugin *)core connection:(id<OENetplayConnection>)connection error:(NSError **)outError;
+- (id)initWithGame:(OEDBGame *)game core:(OECorePlugin *)core connection:(id<OENetplayConnection>)connection error:(NSError **)outError;
+- (id)initWithSaveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection error:(NSError **)outError;
 
 - (id)initWithRom:(OEDBRom *)rom core:(OECorePlugin *)core error:(NSError **)outError;
 - (id)initWithGame:(OEDBGame *)game core:(OECorePlugin *)core error:(NSError **)outError;
