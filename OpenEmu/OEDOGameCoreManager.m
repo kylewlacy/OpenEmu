@@ -186,6 +186,13 @@
     _helperConnection = nil;
 }
 
+#pragma mark - OEGameCoreHelper methods
+
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate
+{
+    [[self gameCoreHelper] setSystemResponderDelegate:aDelegate];
+}
+
 #pragma mark - OEDOGameCoreHelper delegate methods
 
 - (void)setVolume:(CGFloat)value;

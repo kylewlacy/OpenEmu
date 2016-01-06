@@ -61,6 +61,11 @@
     [_helperThread start];
 }
 
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate
+{
+    [_helper setSystemResponderDelegate:aDelegate];
+}
+
 - (void)dummyTimer:(NSTimer *)dummyTimer
 {
     

@@ -68,6 +68,11 @@ NSString * const OEGameCoreErrorDomain = @"OEGameCoreErrorDomain";
     [self doesNotImplementSelector:_cmd];
 }
 
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate
+{
+    [self doesNotImplementSelector:_cmd];
+}
+
 - (void)setVolume:(CGFloat)value;
 {
     [[self gameCoreHelper] setVolume:value];

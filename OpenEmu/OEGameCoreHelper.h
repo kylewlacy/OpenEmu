@@ -32,6 +32,8 @@
 
 @protocol OEGameCoreHelper <NSObject>
 
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate;
+
 - (void)setVolume:(CGFloat)value;
 - (void)setPauseEmulation:(BOOL)pauseEmulation;
 - (void)setAudioOutputDeviceID:(AudioDeviceID)deviceID;

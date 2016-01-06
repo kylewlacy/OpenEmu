@@ -438,6 +438,11 @@
 
 #pragma mark - OEGameCoreHelper methods
 
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate
+{
+    [_systemResponder setDelegate:aDelegate];
+}
+
 - (void)setVolume:(CGFloat)volume
 {
     DLog(@"%@", _gameAudio);

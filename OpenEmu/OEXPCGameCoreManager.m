@@ -155,6 +155,11 @@
      }];
 }
 
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate
+{
+    [[self gameCoreHelper] setSystemResponderDelegate:aDelegate];
+}
+
 - (void)_startHelperProcess
 {
     OEXPCCAgentConfiguration *configuration = [OEXPCCAgentConfiguration defaultConfiguration];
