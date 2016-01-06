@@ -407,7 +407,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
 #undef SEND_CALLBACK
 }
 
-- (void)OE_setupGameDocument:(OEGameDocument *)document display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
+- (void)OE_setupGameDocument:(OEGameDocument *)document display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen connection:(id<OENetplayConnection>)connection completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
 {
     [self addDocument:document];
     [document setupGameWithCompletionHandler:
@@ -434,7 +434,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
              NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
              BOOL fullScreen = [standardDefaults boolForKey:OEFullScreenGameWindowKey];
 
-             [self OE_setupGameDocument:(OEGameDocument*)document display:YES fullScreen:fullScreen completionHandler:nil];
+             [self OE_setupGameDocument:(OEGameDocument*)document display:YES fullScreen:fullScreen connection:nil completionHandler:nil];
          }
          
          if([[error domain] isEqualToString:OEGameDocumentErrorDomain] && [error code] == OEImportRequiredError)
@@ -477,7 +477,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
         return;
     }
 
-    [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
+    [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen connection:connection completionHandler:completionHandler];
 }
 
 - (void)openGameDocumentWithRom:(OEDBRom *)rom connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
@@ -491,7 +491,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
         return;
     }
 
-    [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
+    [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen connection:connection completionHandler:completionHandler];
 }
 
 - (void)openGameDocumentWithSaveState:(OEDBSaveState *)state connection:(id<OENetplayConnection>)connection display:(BOOL)displayDocument fullScreen:(BOOL)fullScreen completionHandler:(void (^)(OEGameDocument *document, NSError *error))completionHandler;
@@ -505,7 +505,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
         return;
     }
 
-    [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen completionHandler:completionHandler];
+    [self OE_setupGameDocument:document display:displayDocument fullScreen:fullScreen connection:connection completionHandler:completionHandler];
 }
 
 #pragma mark - Loading the Library Database
