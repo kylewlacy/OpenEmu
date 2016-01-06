@@ -64,9 +64,14 @@
     {
         if(_gameCoreConnection != nil)
             return NO;
+        
+        NSSet *responderDelegates = [NSSet setWithObjects:[OENetplayClient class], [OENetplayServer class], nil];
+        
+        NSXPCInterface *exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(OEXPCGameCoreHelper)];
+        [exportedInterface setClasses:responderDelegates forSelector:@selector(setSystemResponderDelegate:) argumentIndex:0 ofReply:NO];
 
         _gameCoreConnection = newConnection;
-        [_gameCoreConnection setExportedInterface:[NSXPCInterface interfaceWithProtocol:@protocol(OEXPCGameCoreHelper)]];
+        [_gameCoreConnection setExportedInterface:exportedInterface];
         [_gameCoreConnection setExportedObject:self];
         [_gameCoreConnection setRemoteObjectInterface:[NSXPCInterface interfaceWithProtocol:@protocol(OEGameCoreOwner)]];
         [_gameCoreConnection setInvalidationHandler:^{
