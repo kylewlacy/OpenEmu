@@ -422,12 +422,22 @@ extern NSString * const OESidebarSelectionDidChangeNotificationName;
 
 - (void)hostSelectedGameOnline:(id)sender
 {
-    [self hostGameOnline:nil];
+    NSArray *gamesToStart = [self OE_selectedGamesForSender:sender];
+    
+    NSAssert([gamesToStart count] == 1, @"Attempt to start an online game without valid item");
+    
+    for(OEDBGame *game in gamesToStart)
+        [self hostGameOnline:game];
 }
 
 - (void)joinSelectedGameOnline:(id)sender
 {
-    [self joinGameOnline:nil];
+    NSArray *gamesToStart = [self OE_selectedGamesForSender:sender];
+    
+    NSAssert([gamesToStart count] == 1, @"Attempt to join an online game without valid item");
+    
+    for(OEDBGame *game in gamesToStart)
+        [self joinGameOnline:game];
 }
 
 - (void)hostGameOnline:(OEDBGame*)game
