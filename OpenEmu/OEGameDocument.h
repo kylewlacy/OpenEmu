@@ -46,6 +46,7 @@ enum _OEGameDocumentErrorCodes
 @class OEDBSaveState;
 @class OEGameViewController;
 @class OESystemPlugin;
+@protocol OESystemResponderDelegate;
 
 @interface OEGameDocument : NSDocument
 
@@ -55,6 +56,8 @@ enum _OEGameDocumentErrorCodes
 
 - (void)setupGameWithCompletionHandler:(void(^)(BOOL success, NSError *error))handler;
 - (void)showInSeparateWindowInFullScreen:(BOOL)fullScreen;
+
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate;
 
 @property(readonly) OEDBRom *rom;
 @property(readonly) NSURL   *romFileURL;

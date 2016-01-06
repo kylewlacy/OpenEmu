@@ -50,6 +50,7 @@
 #import "OEXPCGameCoreManager.h"
 #import "OEDownload.h"
 #import "OEROMImporter.h"
+#import <OpenEmuSystem/OESystemResponder.h>
 
 // using the main window controller here is not very nice, but meh
 #import "OEMainWindowController.h"
@@ -520,6 +521,11 @@ typedef enum : NSUInteger
 #endif
 
     return displayName ? : @"";
+}
+
+- (void)setSystemResponderDelegate:(id<OESystemResponderDelegate>)aDelegate
+{
+    [_gameCoreManager setSystemResponderDelegate:aDelegate];
 }
 
 #pragma mark - Display Sleep Handling
