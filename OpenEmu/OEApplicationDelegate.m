@@ -420,6 +420,7 @@ static void *const _OEApplicationDelegateAllPluginsContext = (void *)&_OEApplica
          }
          else if(completionHandler) completionHandler(nil, error);
 
+         [document setSystemResponderDelegate:connection];
          [self _updateEventHandlers];
      }];
 }
